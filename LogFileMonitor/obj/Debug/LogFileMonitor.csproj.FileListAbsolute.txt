@@ -1,0 +1,23 @@
+C:\Users\Conquer\Desktop\New folder\LogFileMonitor\bin\Debug\LogFileMonitor.exe
+C:\Users\Conquer\Desktop\New folder\LogFileMonitor\bin\Debug\LogFileMonitor.pdb
+C:\Users\Conquer\Desktop\New folder\LogFileMonitor\obj\Debug\LogMonitor.WinMain.resources
+C:\Users\Conquer\Desktop\New folder\LogFileMonitor\obj\Debug\LogFileMonitor.Properties.Resources.resources
+C:\Users\Conquer\Desktop\New folder\LogFileMonitor\obj\Debug\LogFileMonitor.csproj.GenerateResource.Cache
+C:\Users\Conquer\Desktop\New folder\LogFileMonitor\obj\Debug\LogFileMonitor.exe
+C:\Users\Conquer\Desktop\New folder\LogFileMonitor\obj\Debug\LogFileMonitor.pdb
+D:\PegasusRTM\LogFileMonitor\bin\Debug\LogFileMonitor.exe.config
+D:\PegasusRTM\LogFileMonitor\obj\Debug\LogFileMonitor.exe
+D:\PegasusRTM\LogFileMonitor\obj\Debug\LogFileMonitor.pdb
+D:\New folder\LogFileMonitor\obj\Debug\PegasusRTM.LogMonitor.WinMain.resources
+D:\New folder\LogFileMonitor\obj\Debug\LogFileMonitor.Properties.Resources.resources
+D:\New folder\LogFileMonitor\obj\Debug\LogFileMonitor.csproj.GenerateResource.Cache
+D:\New folder\LogFileMonitor\bin\Debug\LogFileMonitor.exe.config
+D:\New folder\LogFileMonitor\bin\Debug\LogFileMonitor.exe
+D:\New folder\LogFileMonitor\bin\Debug\LogFileMonitor.pdb
+D:\New folder\LogFileMonitor\bin\Debug\PegasusAgent.dll
+D:\New folder\LogFileMonitor\bin\Debug\PegasusAgent.pdb
+D:\New folder\LogFileMonitor\obj\Debug\LogFileMonitor.csprojResolveAssemblyReference.cache
+D:\New folder\LogFileMonitor\obj\Debug\LogFileMonitor.exe
+D:\New folder\LogFileMonitor\obj\Debug\LogFileMonitor.pdb
+D:\New folder\LogFileMonitor\obj\Debug\PegasusRTM.LogFileMonitor.AddLexicon.resources
+D:\New folder\LogFileMonitor\obj\Debug\PegasusRTM.LogFileMonitor.LogFileAnalysis.resources

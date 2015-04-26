@@ -1,0 +1,16 @@
+c:\users\conquer\documents\visual studio 2010\Projects\GoPegasusHome\PegasusAgent\bin\Debug\PegasusAgent.dll
+c:\users\conquer\documents\visual studio 2010\Projects\GoPegasusHome\PegasusAgent\bin\Debug\PegasusAgent.pdb
+c:\users\conquer\documents\visual studio 2010\Projects\GoPegasusHome\PegasusAgent\obj\Debug\PegasusAgent.dll
+c:\users\conquer\documents\visual studio 2010\Projects\GoPegasusHome\PegasusAgent\obj\Debug\PegasusAgent.pdb
+D:\GoPegasusHome\PegasusAgent\bin\Debug\PegasusAgent.dll
+D:\GoPegasusHome\PegasusAgent\bin\Debug\PegasusAgent.pdb
+D:\GoPegasusHome\PegasusAgent\obj\Debug\PegasusAgent.dll
+D:\GoPegasusHome\PegasusAgent\obj\Debug\PegasusAgent.pdb
+D:\ProjectRTM\PegasusAgent\bin\Debug\PegasusAgent.dll
+D:\ProjectRTM\PegasusAgent\bin\Debug\PegasusAgent.pdb
+D:\ProjectRTM\PegasusAgent\obj\Debug\PegasusAgent.dll
+D:\ProjectRTM\PegasusAgent\obj\Debug\PegasusAgent.pdb
+D:\New folder\PegasusAgent\bin\Debug\PegasusAgent.dll
+D:\New folder\PegasusAgent\bin\Debug\PegasusAgent.pdb
+D:\New folder\PegasusAgent\obj\Debug\PegasusAgent.dll
+D:\New folder\PegasusAgent\obj\Debug\PegasusAgent.pdb
