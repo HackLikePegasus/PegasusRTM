@@ -16,6 +16,5 @@ D:\New folder\PegasusAgent\obj\Debug\PegasusAgent.dll
 D:\New folder\PegasusAgent\obj\Debug\PegasusAgent.pdb
 C:\Users\Administrator\Documents\GitHub\PegasusRTM\PegasusAgent\bin\Debug\PegasusAgent.dll
 C:\Users\Administrator\Documents\GitHub\PegasusRTM\PegasusAgent\bin\Debug\PegasusAgent.pdb
-C:\Users\Administrator\Documents\GitHub\PegasusRTM\PegasusAgent\obj\Debug\PegasusAgent.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Documents\GitHub\PegasusRTM\PegasusAgent\obj\Debug\PegasusAgent.dll
 C:\Users\Administrator\Documents\GitHub\PegasusRTM\PegasusAgent\obj\Debug\PegasusAgent.pdb

@@ -7,9 +7,18 @@ using System.Threading;
 using System.Reflection;
 using System.IO;
 using System.Configuration;
+using System.Data;
 
 namespace PegasusRTM.PegasusAgent
 {
+
+    public enum ResultType
+    {
+        Security,
+        Performance,
+        UserExperience,
+        SomeThingElse
+    }
     public partial class Agent
     {
         private static Mutex mutex = new Mutex();
@@ -22,7 +31,8 @@ namespace PegasusRTM.PegasusAgent
         public static string[] configValue = new string[4];
         public static FileInfo[] recentLogFiles = new FileInfo[4];
         public static FileInfo[] oldLogFiles = new FileInfo[4];
-
+        public static DataSet appDataSet = new DataSet();
+        
         public static bool LoadAgentResource()
         {
             try
