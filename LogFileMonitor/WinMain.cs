@@ -135,7 +135,7 @@ namespace PegasusRTM.LogMonitor
                 }
                 if (_logFileName.StartsWith("//") || IsNetworkDrive(_logFileName[0]))
                 {
-                    btnForced.Text = "(Network)";
+                    btnForced.Text = "ManualCheck";
                     updateForceTimer();
                 }
                 if (i == 0)
@@ -362,17 +362,20 @@ namespace PegasusRTM.LogMonitor
         private void forcedTimer_Tick(object sender, EventArgs e)
         {
             UpdateDisplay(0);
+            UpdateDisplay(1);
+            UpdateDisplay(2);
+            UpdateDisplay(3);
         }
 
         private void btnForced_Click(object sender, EventArgs e)
-        {
-            btnForced.Text = btnForced.Text == "(Local)" ? "(Network)" : "(Local)";
+        {            
+            btnForced.Text = btnForced.Text == "AutoCheck" ? "ManualCheck" : "AutoCheck";
             updateForceTimer();
         }
 
         private void updateForceTimer()
         {
-            forcedTimer.Enabled = btnForced.Text == "(Network)";
+            forcedTimer.Enabled = btnForced.Text == "ManualCheck";
         }
 
         private void btnAnalyze_Click(object sender, EventArgs e)

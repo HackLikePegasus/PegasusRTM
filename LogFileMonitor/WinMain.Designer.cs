@@ -54,6 +54,7 @@
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher3 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher4 = new System.IO.FileSystemWatcher();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
@@ -79,6 +80,7 @@
             this.btnPauseContinue,
             this.toolStripSeparator1,
             this.btnReload,
+            this.toolStripSeparator5,
             this.btnForced,
             this.toolStripSeparator3,
             this.btnAddLexicon,
@@ -133,8 +135,8 @@
             this.btnForced.Image = ((System.Drawing.Image)(resources.GetObject("btnForced.Image")));
             this.btnForced.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnForced.Name = "btnForced";
-            this.btnForced.Size = new System.Drawing.Size(47, 22);
-            this.btnForced.Text = "(Local)";
+            this.btnForced.Size = new System.Drawing.Size(70, 22);
+            this.btnForced.Text = "AutoCheck";
             this.btnForced.Click += new System.EventHandler(this.btnForced_Click);
             // 
             // toolStripSeparator3
@@ -240,7 +242,7 @@
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(1000, 9);
+            this.lblStatus.Location = new System.Drawing.Point(918, 8);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(65, 13);
             this.lblStatus.TabIndex = 9;
@@ -249,7 +251,7 @@
             // loadStatus
             // 
             this.loadStatus.AutoSize = true;
-            this.loadStatus.Location = new System.Drawing.Point(1072, 8);
+            this.loadStatus.Location = new System.Drawing.Point(989, 8);
             this.loadStatus.Name = "loadStatus";
             this.loadStatus.Size = new System.Drawing.Size(63, 13);
             this.loadStatus.TabIndex = 10;
@@ -269,6 +271,11 @@
             // 
             this.fileSystemWatcher4.EnableRaisingEvents = true;
             this.fileSystemWatcher4.SynchronizingObject = this;
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
             // WinMain
             // 
@@ -323,6 +330,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton btnAddLexicon;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
 	}
 }
 
