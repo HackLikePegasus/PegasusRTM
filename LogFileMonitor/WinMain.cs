@@ -25,11 +25,7 @@ namespace PegasusRTM.LogMonitor
         {
             ScreenInitialization();
             // if a file was passed in, we want to open it but 
-            // we have to wait until the form is fully loaded
-            //if (args.Length > 0)
-            //{
-            //    logFileName = args[0].ToString();
-            //}
+            // we have to wait until the form is fully loaded          
         }
         private void ScreenInitialization()
         {
@@ -54,14 +50,17 @@ namespace PegasusRTM.LogMonitor
 
             }
 
-            this.tbLog.Size = new System.Drawing.Size(w / 2 - 10, h / 2 - 25);
-            this.tbLog.Location = new System.Drawing.Point(0, 28);
-            this.tbLog2.Size = new System.Drawing.Size(w / 2 - 10, h / 2 - 25);
-            this.tbLog2.Location = new System.Drawing.Point(w / 2 - 5, 28);
-            this.tbLog3.Size = new System.Drawing.Size(w / 2 - 10, h / 2 - 25);
-            this.tbLog3.Location = new System.Drawing.Point(0, h / 2);
-            this.tbLog4.Size = new System.Drawing.Size(w / 2 - 10, h / 2 - 25);
-            this.tbLog4.Location = new System.Drawing.Point(w / 2 - 5, h / 2);
+            this.tbLog.Size = new System.Drawing.Size(w / 2 - 10, (h-40) / 2 - 45);
+            this.tbLog.Location = new System.Drawing.Point(0, 58);
+
+            this.tbLog2.Size = new System.Drawing.Size(w / 2 - 10, (h-40) / 2 - 45);
+            this.tbLog2.Location = new System.Drawing.Point(w / 2 - 5, 58);
+
+            this.tbLog3.Size = new System.Drawing.Size(w / 2 - 10, (h-40) / 2 - 45);
+            this.tbLog3.Location = new System.Drawing.Point(0, ((h-40) / 2)+30);
+
+            this.tbLog4.Size = new System.Drawing.Size(w / 2 - 10, (h-40) / 2 - 45);
+            this.tbLog4.Location = new System.Drawing.Point(w / 2 - 5, ((h-40) / 2)+30);
 
         }
         /// <summary>
@@ -109,7 +108,6 @@ namespace PegasusRTM.LogMonitor
             }
 
         }
-
         static bool IsNetworkDrive(char driveLetter)
         {
             foreach (System.IO.DriveInfo drive in System.IO.DriveInfo.GetDrives())
@@ -119,7 +117,6 @@ namespace PegasusRTM.LogMonitor
             // drive not found
             throw new ArgumentException();
         }
-
         /// <summary>
         /// Starts watching the selected file for changes
         /// </summary>
@@ -177,7 +174,6 @@ namespace PegasusRTM.LogMonitor
             }
             btnPauseContinue.Text = "Pause";
         }
-
         /// <summary>
         /// Fired by the filesystem listener when the logfile has changed
         /// </summary>
@@ -199,7 +195,6 @@ namespace PegasusRTM.LogMonitor
         {
             UpdateDisplay(3);
         }
-
         /// <summary>
         /// Stops watching for changes
         /// </summary>
@@ -211,7 +206,6 @@ namespace PegasusRTM.LogMonitor
             fileSystemWatcher4.EnableRaisingEvents = false;
             btnPauseContinue.Text = "Continue";
         }
-
         /// <summary>
         /// Fired when the user clicks the pause/continue button
         /// </summary>
@@ -239,7 +233,6 @@ namespace PegasusRTM.LogMonitor
                 StopMonitoring();
             }
         }
-
         /// <summary>
         /// Updates the textarea with the tail of the logfile and
         /// scrolls to the bottom
@@ -316,7 +309,6 @@ namespace PegasusRTM.LogMonitor
                 }
             }
         }
-
         /// <summary>
         /// When the main text area changes, scroll to the bottom
         /// </summary>
@@ -326,15 +318,13 @@ namespace PegasusRTM.LogMonitor
         {
             timer1.Enabled = true;
         }
-
         private void ScrollToBottom(object sender, EventArgs e)
         {
             timer1.Enabled = false;
             tbLog.SelectionStart = tbLog.Text.Length;
             tbLog.SelectionLength = 0;
             tbLog.ScrollToCaret();
-        }
-       
+        }       
         private void btnReload_Click(object sender, EventArgs e)
         {
             Agent.LoadLogFile();
@@ -351,7 +341,6 @@ namespace PegasusRTM.LogMonitor
                 MessageBox.Show("Please click the Start button after 10 sec.");
             }
         }
-
         /// <summary>
         /// forcedTimer is used to automatically refresh the file in the case where
         /// it is located on a network share that does not trigger the fileSystem
@@ -366,30 +355,35 @@ namespace PegasusRTM.LogMonitor
             UpdateDisplay(2);
             UpdateDisplay(3);
         }
-
         private void btnForced_Click(object sender, EventArgs e)
         {            
             btnForced.Text = btnForced.Text == "AutoCheck" ? "ManualCheck" : "AutoCheck";
             updateForceTimer();
         }
-
         private void updateForceTimer()
         {
             forcedTimer.Enabled = btnForced.Text == "ManualCheck";
         }
-
         private void btnAnalyze_Click(object sender, EventArgs e)
-        {
+        {            
             Form newForm = new LogFileAnalysis();
             newForm.Activate();
             newForm.ShowDialog(); 
         }
-
         private void btnAddLexicon_Click(object sender, EventArgs e)
         {
             Form newForm = new AddLexicon();
             newForm.Activate();
             newForm.ShowDialog(); 
+        }
+        private void logWatchTimer_Tick(object sender, EventArgs e)
+        {
+            PegasusAgent.Agent _agent = new PegasusAgent.Agent();
+            var isSuccess = _agent.AnalyzeDetails();
+            if (isSuccess)
+            {
+                _agent.GenerateAlertLog();
+            }
         }
     }
 }

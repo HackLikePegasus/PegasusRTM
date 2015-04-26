@@ -38,6 +38,7 @@
             this.btnPauseContinue = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnReload = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnForced = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAddLexicon = new System.Windows.Forms.ToolStripButton();
@@ -54,7 +55,8 @@
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher3 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher4 = new System.IO.FileSystemWatcher();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.label1 = new System.Windows.Forms.Label();
+            this.logWatchTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
@@ -125,9 +127,14 @@
             // 
             this.btnReload.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(94, 22);
-            this.btnReload.Text = "Check New Log";
+            this.btnReload.Size = new System.Drawing.Size(99, 22);
+            this.btnReload.Text = "Reload Manually";
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
             // btnForced
             // 
@@ -176,14 +183,14 @@
             this.tbLog2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tbLog2.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbLog2.ForeColor = System.Drawing.Color.LimeGreen;
-            this.tbLog2.Location = new System.Drawing.Point(210, 28);
+            this.tbLog2.Location = new System.Drawing.Point(210, 58);
             this.tbLog2.Multiline = true;
             this.tbLog2.Name = "tbLog2";
             this.tbLog2.ReadOnly = true;
             this.tbLog2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tbLog2.Size = new System.Drawing.Size(200, 75);
             this.tbLog2.TabIndex = 6;
-            this.tbLog2.Text = "Select a file to begin monitoring...";
+            this.tbLog2.Text = "Click Start to begin file monitoring...";
             this.tbLog2.WordWrap = false;
             // 
             // tbLog3
@@ -193,14 +200,14 @@
             this.tbLog3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tbLog3.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbLog3.ForeColor = System.Drawing.Color.LimeGreen;
-            this.tbLog3.Location = new System.Drawing.Point(0, 80);
+            this.tbLog3.Location = new System.Drawing.Point(0, 140);
             this.tbLog3.Multiline = true;
             this.tbLog3.Name = "tbLog3";
             this.tbLog3.ReadOnly = true;
             this.tbLog3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tbLog3.Size = new System.Drawing.Size(200, 75);
             this.tbLog3.TabIndex = 7;
-            this.tbLog3.Text = "Select a file to begin monitoring...";
+            this.tbLog3.Text = "Click Start to begin file monitoring...";
             this.tbLog3.WordWrap = false;
             // 
             // tbLog4
@@ -210,14 +217,14 @@
             this.tbLog4.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tbLog4.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbLog4.ForeColor = System.Drawing.Color.LimeGreen;
-            this.tbLog4.Location = new System.Drawing.Point(210, 80);
+            this.tbLog4.Location = new System.Drawing.Point(210, 140);
             this.tbLog4.Multiline = true;
             this.tbLog4.Name = "tbLog4";
             this.tbLog4.ReadOnly = true;
             this.tbLog4.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tbLog4.Size = new System.Drawing.Size(200, 75);
             this.tbLog4.TabIndex = 8;
-            this.tbLog4.Text = "Select a file to begin monitoring...";
+            this.tbLog4.Text = "Click Start to begin file monitoring...";
             this.tbLog4.WordWrap = false;
             // 
             // tbLog
@@ -227,14 +234,14 @@
             this.tbLog.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tbLog.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbLog.ForeColor = System.Drawing.Color.LimeGreen;
-            this.tbLog.Location = new System.Drawing.Point(0, 28);
+            this.tbLog.Location = new System.Drawing.Point(0, 58);
             this.tbLog.Multiline = true;
             this.tbLog.Name = "tbLog";
             this.tbLog.ReadOnly = true;
             this.tbLog.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.tbLog.Size = new System.Drawing.Size(200, 75);
             this.tbLog.TabIndex = 2;
-            this.tbLog.Text = "Select a file to begin monitoring...";
+            this.tbLog.Text = "Click Start to begin file monitoring...";
             this.tbLog.WordWrap = false;
             this.tbLog.TextChanged += new System.EventHandler(this.tbLog_TextChanged);
             // 
@@ -272,16 +279,28 @@
             this.fileSystemWatcher4.EnableRaisingEvents = true;
             this.fileSystemWatcher4.SynchronizingObject = this;
             // 
-            // toolStripSeparator5
+            // label1
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(8, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(384, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Streaming: ~TL: Web~TR: Nw~BL: ErrLog~BR: ClickLog";
+            // 
+            // logWatchTimer
+            // 
+            this.logWatchTimer.Enabled = true;
+            this.logWatchTimer.Interval = 60000;
+            this.logWatchTimer.Tick += new System.EventHandler(this.logWatchTimer_Tick);
             // 
             // WinMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1249, 453);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.loadStatus);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.tbLog4);
@@ -331,6 +350,8 @@
         private System.Windows.Forms.ToolStripButton btnAddLexicon;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer logWatchTimer;
 	}
 }
 

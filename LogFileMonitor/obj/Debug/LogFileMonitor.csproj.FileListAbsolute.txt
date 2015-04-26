@@ -34,3 +34,16 @@ C:\Users\Administrator\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Debug\LogF
 C:\Users\Administrator\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Debug\LogFileMonitor.csproj.GenerateResource.Cache
 C:\Users\Administrator\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Debug\LogFileMonitor.exe
 C:\Users\Administrator\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Debug\LogFileMonitor.pdb
+C:\Users\Conquer\Documents\GitHub\PegasusRTM\LogFileMonitor\bin\Debug\LogFileMonitor.exe.config
+C:\Users\Conquer\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Debug\LogFileMonitor.exe
+C:\Users\Conquer\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Debug\LogFileMonitor.pdb
+C:\Users\Conquer\Documents\GitHub\PegasusRTM\LogFileMonitor\bin\Debug\LogFileMonitor.exe
+C:\Users\Conquer\Documents\GitHub\PegasusRTM\LogFileMonitor\bin\Debug\LogFileMonitor.pdb
+C:\Users\Conquer\Documents\GitHub\PegasusRTM\LogFileMonitor\bin\Debug\PegasusAgent.dll
+C:\Users\Conquer\Documents\GitHub\PegasusRTM\LogFileMonitor\bin\Debug\PegasusAgent.pdb
+C:\Users\Conquer\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Debug\LogFileMonitor.csprojResolveAssemblyReference.cache
+C:\Users\Conquer\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Debug\PegasusRTM.LogFileMonitor.AddLexicon.resources
+C:\Users\Conquer\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Debug\PegasusRTM.LogFileMonitor.LogFileAnalysis.resources
+C:\Users\Conquer\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Debug\PegasusRTM.LogMonitor.WinMain.resources
+C:\Users\Conquer\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Debug\LogFileMonitor.Properties.Resources.resources
+C:\Users\Conquer\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Debug\LogFileMonitor.csproj.GenerateResource.Cache

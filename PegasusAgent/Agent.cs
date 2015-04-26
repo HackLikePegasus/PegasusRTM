@@ -14,11 +14,7 @@ namespace PegasusRTM.PegasusAgent
 
     public enum ResultType
     {
-        R1, R2, R3, R4,
-        Security,
-        Performance,
-        UserExperience,
-        SomeThingElse
+        R1, R2, R3, R4,UserDefined
     }
     public partial class Agent
     {
@@ -29,10 +25,16 @@ namespace PegasusRTM.PegasusAgent
         public static List<string> R2 = new List<string>();
         public static List<string> R3 = new List<string>();
         public static List<string> R4 = new List<string>();
+        public static List<string> UserDefined = new List<string>();
         public static string[] configValue = new string[4];
         public static FileInfo[] recentLogFiles = new FileInfo[4];
         public static FileInfo[] oldLogFiles = new FileInfo[4];
         public static DataSet appDataSet = new DataSet();
+        public static Dictionary<char, List<string>> keyWordsDictionary_R1;
+        public static Dictionary<char, List<string>> keyWordsDictionary_R2;
+        public static Dictionary<char, List<string>> keyWordsDictionary_R3;
+        public static Dictionary<char, List<string>> keyWordsDictionary_R4;
+        public static Dictionary<char, List<string>> keyWordsDictionary_UserDefined;
 
         public static bool LoadAgentResource()
         {
@@ -227,24 +229,60 @@ namespace PegasusRTM.PegasusAgent
 
 
         }
-
         public bool AnalyzeDetails(string[] keyList = null)
         {
             try
             {
-                if (keyList!=null)
+                if (keyList != null)
                 {
                     // to be implemented.. istead of R1,R2,R3,R4 take these are the search items 'keyList'.
+                    SearchAgent s = new SearchAgent(ResultType.UserDefined);
+                    Agent.UserDefined = keyList.ToList();
+                    using (StreamReader sr = new StreamReader(recentLogFiles[0].FullName))
+                    {                      
+                        s.SearchSpecificLog(sr);
+                    }
+                    using (StreamReader sr = new StreamReader(recentLogFiles[1].FullName))
+                    {
+                        s.SearchSpecificLog(sr);
+                    }
+                    using (StreamReader sr = new StreamReader(recentLogFiles[2].FullName))
+                    {
+                        s.SearchSpecificLog(sr);
+                    }
+                    using (StreamReader sr = new StreamReader(recentLogFiles[3].FullName))
+                    {
+                        s.SearchSpecificLog(sr);
+                    }
+                    s = null;
+
                 }
                 else
                 {
-                    for (int i = 0; i < numThreads; i++)
+                    SearchAgent s = null;
+                    Agent.UserDefined = new List<string>();
+                    using (StreamReader sr = new StreamReader(recentLogFiles[0].FullName))
                     {
-                        Thread mycorner = new Thread(new ThreadStart(SearchThreadProcess));
-                        mycorner.Name = String.Format("{0}", i);
-                        mycorner.Start();
+                         s = new SearchAgent(ResultType.R1);
+                        s.SearchSpecificLog(sr);
                     }
-                }               
+                    using (StreamReader sr = new StreamReader(recentLogFiles[1].FullName))
+                    {
+                        s = new SearchAgent(ResultType.R2);
+                        s.SearchSpecificLog(sr);
+                    }
+                    using (StreamReader sr = new StreamReader(recentLogFiles[2].FullName))
+                    {
+                        s = new SearchAgent(ResultType.R3);
+                        s.SearchSpecificLog(sr);
+                    }
+                    using (StreamReader sr = new StreamReader(recentLogFiles[3].FullName))
+                    {
+                        s = new SearchAgent(ResultType.R4);
+                        s.SearchSpecificLog(sr);
+                    }                    
+                    s = null;
+                }
             }
             catch (Exception e)
             {
@@ -253,44 +291,42 @@ namespace PegasusRTM.PegasusAgent
             return true;
 
         }
-        private static void SearchThreadProcess()
+        public void GenerateAlertLog()
         {
-            mutex.WaitOne();   // Wait until it is safe to enter.
-            var name = Thread.CurrentThread.Name;
-            SearchAgent s = null;
-            StreamReader a1 = null;
-            StreamReader s1 = null;
-            switch (name)
+            string alertLogPath = ConfigurationManager.AppSettings["output_logs"];
+            var fileName = string.Format("{0}\\{1}_{2:MMddyyyy_hhmmss}.txt", alertLogPath, "LogReportOut", DateTime.Now);
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(fileName))
             {
-                case "0":
-                    s = new SearchAgent(ResultType.R1);
-                    s1 = new StreamReader(recentLogFiles[Convert.ToInt32(name)].FullName);
-                    s.SearchSpecificLog(s1);
-                    break;
-                case "1":
-                    name = Thread.CurrentThread.Name;
-                    s = new SearchAgent(ResultType.R2);
-                    s1 = new StreamReader(recentLogFiles[Convert.ToInt32(name)].FullName);
-                    s.SearchSpecificLog(s1);
-                    break;
-                case "2":
-                    name = Thread.CurrentThread.Name;
-                    s = new SearchAgent(ResultType.R3);
-                    s1 = new StreamReader(recentLogFiles[Convert.ToInt32(name)].FullName);
-                    s.SearchSpecificLog(s1);
-                    break;
-                case "3":
-                    name = Thread.CurrentThread.Name;
-                    s = new SearchAgent(ResultType.R4);
-                    s1 = new StreamReader(recentLogFiles[Convert.ToInt32(name)].FullName);
-                    s.SearchSpecificLog(s1);
-                    break;
-                default:
-                    break;
-            }        
-            // Place code to access non-reentrant resources here.
-            Thread.Sleep(500);    // Wait until it is safe to enter.
-            mutex.ReleaseMutex();    // Release the Mutex.
+                file.WriteLine(string.Format("The below are the oservations in file name - {0}", fileName));
+                file.WriteLine("**************************************************************************");
+                foreach (DataTable table in appDataSet.Tables)
+                {
+                    switch (table.TableName)
+                    {
+                        case "Table1": file.WriteLine("-----------------[Security Concerns Related - Highlights]----------------");
+                            break;
+                        case "Table2": file.WriteLine("-----------------[Customer Experience Related - Highlights]--------------");
+                            break;
+                        case "Table3": file.WriteLine("-----------------[Issues with App-Performance - Highlights]--------------");
+                            break;
+                        case "Table4": file.WriteLine("-----------------[Peak time Performace - Highlights]---------------------");
+                            break;
+                        default:
+                            break;
+                    }
+                    file.WriteLine("");
+                    foreach (DataRow row in table.Rows)
+                    {
+                        // If the line doesn't contain the word 'Second', write the line to the file. 
+                        file.WriteLine(row.ItemArray[0].ToString());
+                    }
+                    file.WriteLine(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
+                    file.WriteLine("-----------------[  [  [ Highlight Section Ends ]  ]  ]-----------------");
+                }
+                file.WriteLine("****************************End**********************************************");
+            }
+
+            appDataSet.Clear();
         }
 
     }

@@ -11,111 +11,118 @@ namespace PegasusRTM.PegasusAgent
     {
         public static List<string> IgnoreWords;
         DataTable dt;
-        Dictionary<char, List<string>> keyWordsDictionary;
+        private readonly object _Padlock = new object();
+        public Dictionary<char, List<string>> keyWordsDictionary;
         ResultType rt;
         public SearchAgent(ResultType resType)
         {
             rt = resType;
             SetIgnoreWords();
+            InitializeKeyWordMaps();
         }
 
         static void SetIgnoreWords()
         {
-            IgnoreWords.Add("a");
-            IgnoreWords.Add("at");
-            IgnoreWords.Add("the");
-            IgnoreWords.Add("an");
-            IgnoreWords.Add("of");
+            if (IgnoreWords == null)
+            {
+                IgnoreWords = new List<string>();
+                IgnoreWords.Add("a");
+                IgnoreWords.Add("at");
+                IgnoreWords.Add("the");
+                IgnoreWords.Add("an");
+                IgnoreWords.Add("of");
+            }
         }
-
-
-
         public void SearchSpecificLog(StreamReader reader)
         {
             //FormKeyWords();
+            this.dt = new DataTable();
+            DataColumn dc1 = new DataColumn("col1");
             dt = new DataTable();
-            //dt.Rows.Add
+            dt.Columns.Add("Output", typeof(String));
             Stemmer stemmer = new Stemmer();
-            //List<string> matchedKeyWords = new List<string>();
             List<string> currentWords;
             StringBuilder line = new StringBuilder(string.Empty);
             if (reader != null)
             {
-                while (true)
+                while (!reader.EndOfStream)
                 {
-                    if (!reader.EndOfStream)
+                    line.Append(reader.ReadLine());
+                    currentWords = line.ToString().Split(' ').ToList();
+                    //currentWords = RemoveUnwantedWords(currentWords);
+                    currentWords = (from strVal in currentWords
+                                    where !IgnoreWords.Contains(strVal.Trim()) && !string.IsNullOrEmpty(strVal.Trim())
+                                    select strVal.Trim()).ToList();
+                    foreach (var item in currentWords)
                     {
-                        line.Append(reader.ReadLine());
-                        currentWords = line.ToString().Split(' ').ToList();
-                        currentWords = RemoveUnwantedWords(currentWords);
-
-                        foreach (var item in currentWords)
+                        if (!string.IsNullOrEmpty(item.Trim()))
                         {
                             if (IsWordFoundInDictioanry(stemmer.strStem(item.ToLower())))
                             {
-                                dt.Rows.Add(line.ToString());
+                                this.dt.Rows.Add(line.ToString()); 
                                 break;
                             }
                         }
-                        line.Clear();
                     }
-                    else
-                    break;
+                    line.Clear();
                 }
-                Agent.appDataSet.Tables.Add(dt); 
+                Agent.appDataSet.Tables.Add(this.dt);
             }
             else
             {
                 Console.WriteLine("No Stream available");
             }
         }
-
         private bool IsWordFoundInDictioanry(string p)
         {
-            if (keyWordsDictionary[p.ElementAt(0)].Any(t => t.Contains(p)))
-                return true;
-            return false;
-        }
-
-        private List<string> RemoveUnwantedWords(List<string> currentWords)
-        {
-            foreach (var item in currentWords)
+            char x = p[0];
+            if (this.keyWordsDictionary.ContainsKey(p[0]))
             {
-                if (string.IsNullOrEmpty(item))
-                    currentWords.Remove(item);
-                else
-                {
-                    currentWords.ToList().ForEach(t =>
-                    {
-                        if (IgnoreWords.Select(ig => ig.Equals(t.ToLower())).Any())
-                        { currentWords.Remove(t); }
-                    });
-                }
+                if (this.keyWordsDictionary[(char)p.ElementAt(0)].Any(t => t.Contains(p)))
+                    return true;
             }
-            return currentWords;
+            return false;
         }
 
         public void InitializeKeyWordMaps()
         {
             if (this.rt == ResultType.R1)
             {
-                //Need to Initialize caching
-                keyWordsDictionary = getKeyWordMap(Agent.R1);
+                if (Agent.keyWordsDictionary_R1 == null)
+                {
+                    Agent.keyWordsDictionary_R1 = getKeyWordMap(Agent.R1);
+                }
+                this.keyWordsDictionary = Agent.keyWordsDictionary_R1;
+
             }
             else if (this.rt == ResultType.R2)
             {
-                //Need to Initialize caching
-                keyWordsDictionary = getKeyWordMap(Agent.R2);
+                if (Agent.keyWordsDictionary_R2 == null)
+                {
+                    Agent.keyWordsDictionary_R2 = getKeyWordMap(Agent.R2);
+                }
+                this.keyWordsDictionary = Agent.keyWordsDictionary_R2;
             }
             else if (this.rt == ResultType.R3)
             {
-                //Need to Initialize caching
-                keyWordsDictionary = getKeyWordMap(Agent.R3);
+                if (Agent.keyWordsDictionary_R3 == null)
+                {
+                    Agent.keyWordsDictionary_R3 = getKeyWordMap(Agent.R3);
+                }
+                this.keyWordsDictionary = Agent.keyWordsDictionary_R3;
             }
             else if (this.rt == ResultType.R4)
             {
-                //Need to Initialize caching
-                keyWordsDictionary = getKeyWordMap(Agent.R4);
+                if (Agent.keyWordsDictionary_R4 == null)
+                {
+                    Agent.keyWordsDictionary_R4 = getKeyWordMap(Agent.R4);
+                }
+                this.keyWordsDictionary = Agent.keyWordsDictionary_R4;
+            }
+            else if (this.rt == ResultType.UserDefined)
+            {
+                Agent.keyWordsDictionary_UserDefined = getKeyWordMap(Agent.UserDefined);
+                this.keyWordsDictionary = Agent.keyWordsDictionary_UserDefined;
             }
         }
 
@@ -135,8 +142,9 @@ namespace PegasusRTM.PegasusAgent
 
         private void AddItemtoListInDictionary(char p, string item, ref Dictionary<char, List<string>> dictKeys)
         {
-            if (dictKeys[p] == null)
+            if (!dictKeys.ContainsKey(p))
             {
+                dictKeys.Add(p, new List<string>() { item });
                 dictKeys[p] = new List<string>() { item };
             }
             else
