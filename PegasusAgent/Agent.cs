@@ -14,6 +14,7 @@ namespace PegasusRTM.PegasusAgent
 
     public enum ResultType
     {
+        R1, R2, R3, R4,
         Security,
         Performance,
         UserExperience,
@@ -32,7 +33,7 @@ namespace PegasusRTM.PegasusAgent
         public static FileInfo[] recentLogFiles = new FileInfo[4];
         public static FileInfo[] oldLogFiles = new FileInfo[4];
         public static DataSet appDataSet = new DataSet();
-        
+
         public static bool LoadAgentResource()
         {
             try
@@ -162,7 +163,7 @@ namespace PegasusRTM.PegasusAgent
             {
                 return false;
             }
-          
+
         }
         private void AddToFile(string lexiconString, string filenameList)
         {
@@ -195,14 +196,14 @@ namespace PegasusRTM.PegasusAgent
                     if (compareRList.Count() > 0 && sList.Count() > 0)
                     {
                         var slist = from string strVal in sList
-                                    where strVal.Trim()!=""
+                                    where strVal.Trim() != ""
                                     select strVal.Trim();
                         var foundList = from string strVal in compareRList
                                         where slist.Contains(strVal)
                                         select strVal.Trim();
                         if (foundList.Count() == 0)
                         {
-                            File.AppendAllText(filename, ","+ string.Join(",", slist));
+                            File.AppendAllText(filename, "," + string.Join(",", slist));
                             if (item.Equals("R1"))
                             {
                                 R1.AddRange(slist.ToList());
@@ -226,6 +227,72 @@ namespace PegasusRTM.PegasusAgent
 
 
         }
+
+        public bool AnalyzeDetails(string[] keyList = null)
+        {
+            try
+            {
+                if (keyList!=null)
+                {
+                    // to be implemented.. istead of R1,R2,R3,R4 take these are the search items 'keyList'.
+                }
+                else
+                {
+                    for (int i = 0; i < numThreads; i++)
+                    {
+                        Thread mycorner = new Thread(new ThreadStart(SearchThreadProcess));
+                        mycorner.Name = String.Format("{0}", i);
+                        mycorner.Start();
+                    }
+                }               
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
+
+        }
+        private static void SearchThreadProcess()
+        {
+            mutex.WaitOne();   // Wait until it is safe to enter.
+            var name = Thread.CurrentThread.Name;
+            SearchAgent s = null;
+            StreamReader a1 = null;
+            StreamReader s1 = null;
+            switch (name)
+            {
+                case "0":
+                    s = new SearchAgent(ResultType.R1);
+                    s1 = new StreamReader(recentLogFiles[Convert.ToInt32(name)].FullName);
+                    s.SearchSpecificLog(s1);
+                    break;
+                case "1":
+                    name = Thread.CurrentThread.Name;
+                    s = new SearchAgent(ResultType.R2);
+                    s1 = new StreamReader(recentLogFiles[Convert.ToInt32(name)].FullName);
+                    s.SearchSpecificLog(s1);
+                    break;
+                case "2":
+                    name = Thread.CurrentThread.Name;
+                    s = new SearchAgent(ResultType.R3);
+                    s1 = new StreamReader(recentLogFiles[Convert.ToInt32(name)].FullName);
+                    s.SearchSpecificLog(s1);
+                    break;
+                case "3":
+                    name = Thread.CurrentThread.Name;
+                    s = new SearchAgent(ResultType.R4);
+                    s1 = new StreamReader(recentLogFiles[Convert.ToInt32(name)].FullName);
+                    s.SearchSpecificLog(s1);
+                    break;
+                default:
+                    break;
+            }        
+            // Place code to access non-reentrant resources here.
+            Thread.Sleep(500);    // Wait until it is safe to enter.
+            mutex.ReleaseMutex();    // Release the Mutex.
+        }
+
     }
 
 }

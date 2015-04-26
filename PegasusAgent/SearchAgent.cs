@@ -97,22 +97,22 @@ namespace PegasusRTM.PegasusAgent
 
         public void InitializeKeyWordMaps()
         {
-            if (this.rt == ResultType.Performance)
+            if (this.rt == ResultType.R1)
             {
                 //Need to Initialize caching
                 keyWordsDictionary = getKeyWordMap(Agent.R1);
             }
-            else if (this.rt == ResultType.Security)
+            else if (this.rt == ResultType.R2)
             {
                 //Need to Initialize caching
                 keyWordsDictionary = getKeyWordMap(Agent.R2);
             }
-            else if (this.rt == ResultType.SomeThingElse)
+            else if (this.rt == ResultType.R3)
             {
                 //Need to Initialize caching
                 keyWordsDictionary = getKeyWordMap(Agent.R3);
             }
-            else if (this.rt == ResultType.UserExperience)
+            else if (this.rt == ResultType.R4)
             {
                 //Need to Initialize caching
                 keyWordsDictionary = getKeyWordMap(Agent.R4);
