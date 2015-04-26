@@ -1,3 +1,1 @@
-﻿<Performance>
-
-PPP, peak
+max load,limited provision,abrupt end,min speed,exception,hi,hello,how

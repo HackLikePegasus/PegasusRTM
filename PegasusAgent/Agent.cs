@@ -21,8 +21,8 @@ namespace PegasusRTM.PegasusAgent
         public static List<string> R4 = new List<string>();
         public static string[] configValue = new string[4];
         public static FileInfo[] recentLogFiles = new FileInfo[4];
-        public static FileInfo[] oldLogFiles = new FileInfo[4]; 
-        
+        public static FileInfo[] oldLogFiles = new FileInfo[4];
+
         public static bool LoadAgentResource()
         {
             try
@@ -34,7 +34,7 @@ namespace PegasusRTM.PegasusAgent
                     mycorner.Start();
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return false;
             }
@@ -42,7 +42,7 @@ namespace PegasusRTM.PegasusAgent
         }
         private static void ThreadProcess()
         {
-            LoadResourceFileThreaded();        
+            LoadResourceFileThreaded();
         }
         private static void LoadResourceFileThreaded()
         {
@@ -61,47 +61,28 @@ namespace PegasusRTM.PegasusAgent
             // How to: Write to a Text File. You can change the path and 
             // file name to substitute text files of your own. 
 
-            // Example #1 
             // Read the file as one string. 
             if (File.Exists(filename))
             {
+                char[] delimeters = { ',' };
                 string text = System.IO.File.ReadAllText(filename);
                 if (type.Equals("R1"))
                 {
-                    R1 = text.Split(',').ToList();
+                    R1 = text.Split(delimeters, StringSplitOptions.RemoveEmptyEntries).ToList();
                 }
                 else if (type.Equals("R2"))
                 {
-                    R2 = text.Split(',').ToList();
+                    R2 = text.Split(delimeters, StringSplitOptions.RemoveEmptyEntries).ToList();
                 }
                 else if (type.Equals("R3"))
                 {
-                    R3 = text.Split(',').ToList();
+                    R3 = text.Split(delimeters, StringSplitOptions.RemoveEmptyEntries).ToList();
                 }
                 else
                 {
-                    R4 = text.Split(',').ToList();
+                    R4 = text.Split(delimeters, StringSplitOptions.RemoveEmptyEntries).ToList();
                 }
-                //System.Console.WriteLine("Contents of WriteText.txt = {0}", text);
             }
-
-            // Display the file contents to the console. Variable text is a string.
-            //// Example #2 
-            //// Read each line of the file into a string array. Each element 
-            //// of the array is one line of the file. 
-            //string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Public\TestFolder\WriteLines2.txt");
-
-            //// Display the file contents by using a foreach loop.
-            //System.Console.WriteLine("Contents of WriteLines2.txt = ");
-            //foreach (string line in lines)
-            //{
-            //    // Use a tab to indent each line of the file.
-            //    Console.WriteLine("\t" + line);
-            //}
-
-            //// Keep the console window open in debug mode.
-            //Console.WriteLine("Press any key to exit.");
-            // System.Console.ReadKey();
         }
 
         public static void LoadLogFile()
@@ -120,7 +101,7 @@ namespace PegasusRTM.PegasusAgent
         private static void ThreadLogFileLoadProcess()
         {
             LoadLogFileThreaded();
-        }       
+        }
         private static void LoadLogFileThreaded()
         {
             mutex.WaitOne();   // Wait until it is safe to enter.
@@ -128,9 +109,9 @@ namespace PegasusRTM.PegasusAgent
             if (Directory.Exists(path))
             {
                 FileInfo newestFile = GetNewestFile(new DirectoryInfo(path));
-                recentLogFiles[(Convert.ToInt32(Thread.CurrentThread.Name) - 1)] = newestFile;                
-                
-            }           
+                recentLogFiles[(Convert.ToInt32(Thread.CurrentThread.Name) - 1)] = newestFile;
+
+            }
             // Place code to access non-reentrant resources here.
             Thread.Sleep(500);    // Wait until it is safe to enter.
             mutex.ReleaseMutex();    // Release the Mutex.
@@ -141,7 +122,100 @@ namespace PegasusRTM.PegasusAgent
                 .Union(directory.GetDirectories().Select(d => GetNewestFile(d)))
                 .OrderByDescending(f => (f == null ? DateTime.MinValue : f.LastWriteTime))
                 .FirstOrDefault();
-        }                   
+        }
+
+        public bool AddLexiconsToResource(string lexicons, bool r1 = false, bool r2 = false, bool r3 = false, bool r4 = false)
+        {
+            try
+            {
+                var filenameList = "";
+                if (r1)
+                {
+                    filenameList += "R1";
+                }
+                if (r2)
+                {
+                    filenameList += ",R2";
+                }
+                if (r3)
+                {
+                    filenameList += ",R3";
+                }
+                if (r4)
+                {
+                    filenameList += ",R4";
+                }
+                AddToFile(lexicons, filenameList);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+          
+        }
+        private void AddToFile(string lexiconString, string filenameList)
+        {
+            var resourcePath = Directory.GetParent(Directory.GetCurrentDirectory());
+
+            foreach (var item in filenameList.Split(','))
+            {
+                var filename = string.Format(@"{0}\{1}\{2}.txt", resourcePath, "AgentResource", item.Trim());
+                if (File.Exists(filename))
+                {
+                    string[] compareRList = null;
+                    if (item.Equals("R1"))
+                    {
+                        compareRList = R1.ToArray();
+                    }
+                    else if (item.Equals("R2"))
+                    {
+                        compareRList = R2.ToArray();
+                    }
+                    else if (item.Equals("R3"))
+                    {
+                        compareRList = R3.ToArray();
+                    }
+                    else
+                    {
+                        compareRList = R4.ToArray();
+                    }
+                    char[] delimeters = { ',' };
+                    string[] sList = lexiconString.Split(delimeters, StringSplitOptions.RemoveEmptyEntries);
+                    if (compareRList.Count() > 0 && sList.Count() > 0)
+                    {
+                        var slist = from string strVal in sList
+                                    where strVal.Trim()!=""
+                                    select strVal.Trim();
+                        var foundList = from string strVal in compareRList
+                                        where slist.Contains(strVal)
+                                        select strVal.Trim();
+                        if (foundList.Count() == 0)
+                        {
+                            File.AppendAllText(filename, ","+ string.Join(",", slist));
+                            if (item.Equals("R1"))
+                            {
+                                R1.AddRange(slist.ToList());
+                            }
+                            else if (item.Equals("R2"))
+                            {
+                                R2.AddRange(slist.ToList());
+                            }
+                            else if (item.Equals("R3"))
+                            {
+                                R3.AddRange(slist.ToList());
+                            }
+                            else
+                            {
+                                R4.AddRange(slist.ToList());
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
     }
 
 }

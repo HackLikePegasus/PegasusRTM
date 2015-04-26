@@ -1,2 +1,2 @@
 ﻿<Customer>
-CCC, prod
+CCC, prod,qwerty,b

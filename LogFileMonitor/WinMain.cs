@@ -337,7 +337,19 @@ namespace PegasusRTM.LogMonitor
        
         private void btnReload_Click(object sender, EventArgs e)
         {
-
+            Agent.LoadLogFile();
+            Thread.Sleep(500);
+            if (Agent.recentLogFiles[0] != null
+               && Agent.recentLogFiles[1] != null
+               && Agent.recentLogFiles[2] != null
+               && Agent.recentLogFiles[3] != null)
+            {
+                StartMonitoring();
+            }
+            else
+            {
+                MessageBox.Show("Please click the Start button after 10 sec.");
+            }
         }
 
         /// <summary>

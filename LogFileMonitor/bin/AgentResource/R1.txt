@@ -1,2 +1,1 @@
-﻿<Security>
-AAA, sec
+max load,max threshold,limited provision

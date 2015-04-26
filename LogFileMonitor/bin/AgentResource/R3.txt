@@ -1,2 +1,2 @@
 ﻿<Issue>
-Isue,ben
+Isue,ben,abrupt end,min speed,exception

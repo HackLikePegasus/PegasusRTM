@@ -37,7 +37,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnPauseContinue = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.btnReload = new System.Windows.Forms.ToolStripButton();
             this.btnForced = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAddLexicon = new System.Windows.Forms.ToolStripButton();
@@ -78,7 +78,7 @@
             this.toolStripSeparator2,
             this.btnPauseContinue,
             this.toolStripSeparator1,
-            this.toolStripButton1,
+            this.btnReload,
             this.btnForced,
             this.toolStripSeparator3,
             this.btnAddLexicon,
@@ -119,12 +119,13 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton1
+            // btnReload
             // 
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(94, 22);
-            this.toolStripButton1.Text = "Check New Log";
+            this.btnReload.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnReload.Name = "btnReload";
+            this.btnReload.Size = new System.Drawing.Size(94, 22);
+            this.btnReload.Text = "Check New Log";
+            this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // btnForced
             // 
@@ -318,7 +319,7 @@
         private System.IO.FileSystemWatcher fileSystemWatcher3;
         private System.IO.FileSystemWatcher fileSystemWatcher4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton btnReload;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton btnAddLexicon;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
