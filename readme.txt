@@ -1,7 +1,21 @@
-LogFileSuite
-------------
+==================================================================================================================
+Pegasus - LogFileSuite v1.0 Readme
+==================================================================================================================
 
-Collection of utility apps for working with logfiles
+Collection of utility apps for monitoring various kinds of log files
+
+System and Software Requirements:
+---------------------------------
+
+Microsoft Visual Studio 2013
+
+How to use:
+-----------
+
+1) Initialize the module to load the resources.
+2) Check for the latest log files. 
+3) Choose your monitoring method (Auto or Manual).
+4) Let the app do its thing!!
 
 LogMonitor:
 -----------
@@ -20,4 +34,6 @@ Allows you to monitor logfiles in realtime.
 Credits
 -------
 
-
+Bibhuti B Beura
+Deepak Vasudevan
+Vinodhkumar Danda
