@@ -22,3 +22,4 @@ C:\Users\Conquer\Documents\GitHub\PegasusRTM\PegasusAgent\bin\Debug\PegasusAgent
 C:\Users\Conquer\Documents\GitHub\PegasusRTM\PegasusAgent\bin\Debug\PegasusAgent.pdb
 C:\Users\Conquer\Documents\GitHub\PegasusRTM\PegasusAgent\obj\Debug\PegasusAgent.dll
 C:\Users\Conquer\Documents\GitHub\PegasusRTM\PegasusAgent\obj\Debug\PegasusAgent.pdb
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\PegasusAgent\obj\Debug\PegasusAgent.csprojResolveAssemblyReference.cache

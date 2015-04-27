@@ -236,8 +236,8 @@ namespace PegasusRTM.PegasusAgent
                 if (keyList != null)
                 {
                     // to be implemented.. istead of R1,R2,R3,R4 take these are the search items 'keyList'.
-                    SearchAgent s = new SearchAgent(ResultType.UserDefined);
                     Agent.UserDefined = keyList.ToList();
+                    SearchAgent s = new SearchAgent(ResultType.UserDefined);                    
                     using (StreamReader sr = new StreamReader(recentLogFiles[0].FullName))
                     {                      
                         s.SearchSpecificLog(sr);

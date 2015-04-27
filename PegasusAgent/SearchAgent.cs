@@ -59,7 +59,7 @@ namespace PegasusRTM.PegasusAgent
                         {
                             if (IsWordFoundInDictioanry(stemmer.strStem(item.ToLower())))
                             {
-                                this.dt.Rows.Add(line.ToString()); 
+                                this.dt.Rows.Add(line.ToString());
                                 break;
                             }
                         }
