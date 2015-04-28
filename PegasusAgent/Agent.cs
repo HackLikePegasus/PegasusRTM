@@ -233,6 +233,7 @@ namespace PegasusRTM.PegasusAgent
         {
             try
             {
+                Agent.appDataSet = new DataSet();
                 if (keyList != null)
                 {
                     // to be implemented.. istead of R1,R2,R3,R4 take these are the search items 'keyList'.
@@ -318,11 +319,16 @@ namespace PegasusRTM.PegasusAgent
                     foreach (DataRow row in table.Rows)
                     {
                         // If the line doesn't contain the word 'Second', write the line to the file. 
-                        file.WriteLine(row.ItemArray[0].ToString());
+                        if (!string.IsNullOrWhiteSpace(row.ItemArray[0].ToString()))
+                        {
+                            file.WriteLine(row.ItemArray[0].ToString());
+                        }
+                        
                     }
                     file.WriteLine(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
                     file.WriteLine("-----------------[  [  [ Highlight Section Ends ]  ]  ]-----------------");
                 }
+                file.WriteLine("");
                 file.WriteLine("****************************End**********************************************");
             }
 

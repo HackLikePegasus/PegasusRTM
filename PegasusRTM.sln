@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogFileMonitor", "LogFileMo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PegasusAgent", "PegasusAgent\PegasusAgent.csproj", "{FF5D4E13-CA9F-4BFD-B2B7-0E7D01B9AC8C}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PegasusRTMSetup", "PegasusRTMSetup\PegasusRTMSetup.vdproj", "{14F1AEEA-358A-4B49-9A82-FD8BAA5073A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,8 @@ Global
 		{FF5D4E13-CA9F-4BFD-B2B7-0E7D01B9AC8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF5D4E13-CA9F-4BFD-B2B7-0E7D01B9AC8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF5D4E13-CA9F-4BFD-B2B7-0E7D01B9AC8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14F1AEEA-358A-4B49-9A82-FD8BAA5073A8}.Debug|Any CPU.ActiveCfg = Debug
+		{14F1AEEA-358A-4B49-9A82-FD8BAA5073A8}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
