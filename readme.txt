@@ -30,6 +30,13 @@ Allows you to monitor logfiles in realtime.
 
     When param(s) is provided, the UI will open and instantly start 
     monitoring the specified file(s)
+Pegasus Agent:
+-------------
+
+The core file for providing 
+--file access/create & analize based on entered keyword.
+-- Reporting and Search suppot.
+
 
 Credits
 -------
