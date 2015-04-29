@@ -299,18 +299,25 @@ namespace PegasusRTM.PegasusAgent
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(fileName))
             {
                 file.WriteLine(string.Format("The below are the oservations in file name - {0}", fileName));
+                file.WriteLine("Analyzed logs:");
+                foreach (var item in Agent.recentLogFiles)
+                {
+                    file.WriteLine(item.FullName);
+                }
+                file.WriteLine("-------------");
+
                 file.WriteLine("**************************************************************************");
                 foreach (DataTable table in appDataSet.Tables)
                 {
                     switch (table.TableName)
                     {
-                        case "Table1": file.WriteLine("-----------------[Security Concerns Related - Highlights]----------------");
+                        case "Table1": file.WriteLine("-----------------[Security Concerns Related - Highlights]----" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "----");
                             break;
-                        case "Table2": file.WriteLine("-----------------[Customer Experience Related - Highlights]--------------");
+                        case "Table2": file.WriteLine("-----------------[Customer Experience Related - Highlights]----" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "----");
                             break;
-                        case "Table3": file.WriteLine("-----------------[Issues with App-Performance - Highlights]--------------");
+                        case "Table3": file.WriteLine("-----------------[Issues with App-Performance - Highlights]----" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "----");
                             break;
-                        case "Table4": file.WriteLine("-----------------[Peak time Performace - Highlights]---------------------");
+                        case "Table4": file.WriteLine("-----------------[Peak time Performace - Highlights]----" + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss") + "----");
                             break;
                         default:
                             break;
@@ -326,13 +333,13 @@ namespace PegasusRTM.PegasusAgent
                         
                     }
                     file.WriteLine(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss"));
-                    file.WriteLine("-----------------[  [  [ Highlight Section Ends ]  ]  ]-----------------");
+                    file.WriteLine("-----------------");
                 }
                 file.WriteLine("");
                 file.WriteLine("****************************End**********************************************");
             }
 
-            appDataSet.Clear();
+            appDataSet = new DataSet();
         }
 
     }

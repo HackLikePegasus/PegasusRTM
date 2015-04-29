@@ -1,0 +1,13 @@
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\LogFileMonitor\bin\Release\LogFileMonitor.exe.config
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\LogFileMonitor\bin\Release\LogFileMonitor.exe
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\LogFileMonitor\bin\Release\LogFileMonitor.pdb
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\LogFileMonitor\bin\Release\PegasusAgent.dll
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\LogFileMonitor\bin\Release\PegasusAgent.pdb
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Release\LogFileMonitor.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Release\PegasusRTM.LogFileMonitor.AddLexicon.resources
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Release\PegasusRTM.LogFileMonitor.LogFileAnalysis.resources
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Release\PegasusRTM.LogMonitor.WinMain.resources
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Release\LogFileMonitor.Properties.Resources.resources
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Release\LogFileMonitor.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Release\LogFileMonitor.exe
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\LogFileMonitor\obj\Release\LogFileMonitor.pdb

@@ -1,0 +1,5 @@
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\PegasusAgent\bin\Release\PegasusAgent.dll
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\PegasusAgent\bin\Release\PegasusAgent.pdb
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\PegasusAgent\obj\Release\PegasusAgent.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\PegasusAgent\obj\Release\PegasusAgent.dll
+C:\Users\Administrator\Documents\GitHub\PegasusRTM\PegasusAgent\obj\Release\PegasusAgent.pdb
