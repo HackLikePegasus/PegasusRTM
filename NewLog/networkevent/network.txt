@@ -1,0 +1,334 @@
+Verizon
+statistics
+txt
+blue
+robots
+
+Error 101 (net::ERR_CONNECTION_RESET)
+Error 2 (net::ERR_FAILED): Unknown error
+Error 104 (net::ERR_CONNECTION_FAILED)
+Error 105 (net::ERR_NAME_NOT_RESOLVED)
+Error 102 (net::ERR_CONNECTION_REFUSED): Unknown error
+Error 324 (net::ERR_EMPTY_RESPONSE)
+Error 124 (net__ERR_WINSOCK_UNEXPECTED_WRITTEN_BYTES)
+
+2102	The workstation driver is not installed.	NERR_NetNotStarted
+2103	The server could not be located.	NERR_UnknownServer
+2104	An internal error occurred. The network cannot access a shared memory segment.	NERR_ShareMem
+2105	A network resource shortage occurred.	NERR_NoNetworkResource
+2106	This operation is not supported on workstations.	NERR_RemoteOnly
+2107	The device is not connected.	NERR_DevNotRedirected
+2114	The Server service is not started.	NERR_ServerNotStarted
+2115	The queue is empty.	NERR_ItemNotFound
+2116	The device or directory does not exist.	NERR_UnknownDevDir
+2117	The operation is invalid on a redirected resource.	NERR_RedirectedPath
+2118	The name has already been shared.	NERR_DuplicateShare
+2119	The server is currently out of the requested resource.	NERR_NoRoom
+2121	Requested addition of items exceeds the maximum allowed.	NERR_TooManyItems
+2122	The Peer service supports only two simultaneous users.	NERR_InvalidMaxUsers
+2123	The API return buffer is too small.	NERR_BufTooSmall
+2127	A remote API error occurred.	NERR_RemoteErr
+2131	An error occurred when opening or reading the configuration file.	NERR_LanmanIniError
+2136	A general network error occurred.	NERR_NetworkError
+2137	The Workstation service is in an inconsistent state. Restart the computer before restarting the Workstation service.	NERR_WkstaInconsistentState
+2138	The Workstation service has not been started.	NERR_WkstaNotStarted
+2139	The requested information is not available.	NERR_BrowserNotStarted
+2140	An internal error occurred.	NERR_InternalError
+2141	The server is not configured for transactions.	NERR_BadTransactConfig
+2142	The requested API is not supported on the remote server.	NERR_InvalidAPI
+2143	The event name is invalid.	NERR_BadEventName
+2144	The computer name already exists on the network. Change it and restart the computer.	NERR_DupNameReboot
+2146	The specified component could not be found in the configuration information.	NERR_CfgCompNotFound
+2147	The specified parameter could not be found in the configuration information.	NERR_CfgParamNotFound
+2149	A line in the configuration file is too long.	NERR_LineTooLong
+2150	The printer does not exist.	NERR_QNotFound
+2151	The print job does not exist.	NERR_JobNotFound
+2152	The printer destination cannot be found.	NERR_DestNotFound
+2153	The printer destination already exists.	NERR_DestExists
+2154	The printer queue already exists.	NERR_QExists
+2155	No more printers can be added.	NERR_QNoRoom
+2156	No more print jobs can be added.	NERR_JobNoRoom
+2157	No more printer destinations can be added.	NERR_DestNoRoom
+2158	This printer destination is idle and cannot accept control operations.	NERR_DestIdle
+2159	This printer destination request contains an invalid control function.	NERR_DestInvalidOp
+2160	The print processor is not responding.	NERR_ProcNoRespond
+2161	The spooler is not running.	NERR_SpoolerNotLoaded
+2162	This operation cannot be performed on the print destination in its current state.	NERR_DestInvalidState
+2163	This operation cannot be performed on the printer queue in its current state.	NERR_QinvalidState
+2164	This operation cannot be performed on the print job in its current state.	NERR_JobInvalidState
+2165	A spooler memory allocation failure occurred.	NERR_SpoolNoMemory
+2166	The device driver does not exist.	NERR_DriverNotFound
+2167	The data type is not supported by the print processor.	NERR_DataTypeInvalid
+2168	The print processor is not installed.	NERR_ProcNotFound
+2180	The service database is locked.	NERR_ServiceTableLocked
+2181	The service table is full.	NERR_ServiceTableFull
+2182	The requested service has already been started.	NERR_ServiceInstalled
+2183	The service does not respond to control actions.	NERR_ServiceEntryLocked
+2184	The service has not been started.	NERR_ServiceNotInstalled
+2185	The service name is invalid.	NERR_BadServiceName
+2186	The service is not responding to the control function.	NERR_ServiceCtlTimeout
+2187	The service control is busy.	NERR_ServiceCtlBusy
+2188	The configuration file contains an invalid service program name.	NERR_BadServiceProgName
+2189	The service could not be controlled in its present state.	NERR_ServiceNotCtrl
+2190	The service ended abnormally.	NERR_ServiceKillProc
+2191	The requested pause or stop is not valid for this service.	NERR_ServiceCtlNotValid
+2192	The service control dispatcher could not find the service name in the dispatch table.	NERR_NotInDispatchTbl
+2193	The service control dispatcher pipe read failed.	NERR_BadControlRecv
+2194	A thread for the new service could not be created.	NERR_ServiceNotStarting
+2200	This workstation is already logged on to the local-area network.	NERR_AlreadyLoggedOn
+2201	The workstation is not logged on to the local-area network.	NERR_NotLoggedOn
+2202	The user name or group name parameter is invalid.	NERR_BadUsername
+2203	The password parameter is invalid.	NERR_BadPassword
+2204	@W The logon processor did not add the message alias.	NERR_UnableToAddName_W
+2205	The logon processor did not add the message alias.	NERR_UnableToAddName_F
+2206	@W The logoff processor did not delete the message alias.	NERR_UnableToDelName_W
+2207	The logoff processor did not delete the message alias.	NERR_UnableToDelName_F
+2209	Network logons are paused.	NERR_LogonsPaused
+2210	A centralized logon-server conflict occurred.	NERR_LogonServerConflict
+2211	The server is configured without a valid user path.	NERR_LogonNoUserPath
+2212	An error occurred while loading or running the logon script.	NERR_LogonScriptError
+2214	The logon server was not specified. Your computer will be logged on as STANDALONE.	NERR_StandaloneLogon
+2215	The logon server could not be found.	NERR_LogonServerNotFound
+2216	There is already a logon domain for this computer.	NERR_LogonDomainExists
+2217	The logon server could not validate the logon.	NERR_NonValidatedLogon
+2219	The security database could not be found.	NERR_ACFNotFound
+2220	The group name could not be found.	NERR_GroupNotFound
+2221	The user name could not be found.	NERR_UserNotFound
+2222	The resource name could not be found.	NERR_ResourceNotFound
+2223	The group already exists.	NERR_GroupExists
+2224	The user account already exists.	NERR_UserExists
+2225	The resource permission list already exists.	NERR_ResourceExists
+2226	This operation is only allowed on the primary domain controller of the domain.	NERR_NotPrimary
+2227	The security database has not been started.	NERR_ACFNotLoaded
+2228	There are too many names in the user accounts database.	NERR_ACFNoRoom
+2229	A disk I/O failure occurred.	NERR_ACFFileIOFail
+2230	The limit of 64 entries per resource was exceeded.	NERR_ACFTooManyLists
+2231	Deleting a user with a session is not allowed.	NERR_UserLogon
+2232	The parent directory could not be located.	NERR_ACFNoParent
+2233	Unable to add to the security database session cache segment.	NERR_CanNotGrowSegment
+2234	This operation is not allowed on this special group.	NERR_SpeGroupOp
+2235	This user is not cached in user accounts database session cache.	NERR_NotInCache
+2236	The user already belongs to this group.	NERR_UserInGroup
+2237	The user does not belong to this group.	NERR_UserNotInGroup
+2238	This user account is undefined.	NERR_AccountUndefined
+2239	This user account has expired.	NERR_AccountExpired
+2240	The user is not allowed to log on from this workstation.	NERR_InvalidWorkstation
+2241	The user is not allowed to log on at this time.	NERR_InvalidLogonHours
+2242	The password of this user has expired.	NERR_PasswordExpired
+2243	The password of this user cannot change.	NERR_PasswordCantChange
+2244	This password cannot be used now.	NERR_PasswordHistConflict
+2245	The password does not meet the password policy requirements. Check the minimum password length, password complexity and password history requirements.	NERR_PasswordTooShort
+2246	The password of this user is too recent to change.	NERR_PasswordTooRecent
+2247	The security database is corrupted.	NERR_InvalidDatabase
+2248	No updates are necessary to this replicant network/local security database.	NERR_DatabaseUpToDate
+2249	This replicant database is outdated; synchronization is required.	NERR_SyncRequired
+2250	The network connection could not be found.	NERR_UseNotFound
+2251	This asg_type is invalid.	NERR_BadAsgType
+2252	This device is currently being shared.	NERR_DeviceIsShared
+2270	The computer name could not be added as a message alias. The name may already exist on the network.	NERR_NoComputerName
+2271	The Messenger service is already started.	NERR_MsgAlreadyStarted
+2272	The Messenger service failed to start.	NERR_MsgInitFailed
+2273	The message alias could not be found on the network.	NERR_NameNotFound
+2274	This message alias has already been forwarded.	NERR_AlreadyForwarded
+2275	This message alias has been added but is still forwarded.	NERR_AddForwarded
+2276	This message alias already exists locally.	NERR_AlreadyExists
+2277	The maximum number of added message aliases has been exceeded.	NERR_TooManyNames
+2278	The computer name could not be deleted.	NERR_DelComputerName
+2279	Messages cannot be forwarded back to the same workstation.	NERR_LocalForward
+2280	An error occurred in the domain message processor.	NERR_GrpMsgProcessor
+2281	The message was sent, but the recipient has paused the Messenger service.	NERR_PausedRemote
+2282	The message was sent but not received.	NERR_BadReceive
+2283	The message alias is currently in use. Try again later.	NERR_NameInUse
+2284	The Messenger service has not been started.	NERR_MsgNotStarted
+2285	The name is not on the local computer.	NERR_NotLocalName
+2286	The forwarded message alias could not be found on the network.	NERR_NoForwardName
+2287	The message alias table on the remote station is full.	NERR_RemoteFull
+2288	Messages for this alias are not currently being forwarded.	NERR_NameNotForwarded
+2289	The broadcast message was truncated.	NERR_TruncatedBroadcast
+2294	This is an invalid device name.	NERR_InvalidDevice
+2295	A write fault occurred.	NERR_WriteFault
+2297	A duplicate message alias exists on the network.	NERR_DuplicateName
+2298	@W This message alias will be deleted later.	NERR_DeleteLater
+2299	The message alias was not successfully deleted from all networks.	NERR_IncompleteDel
+2300	This operation is not supported on computers with multiple networks.	NERR_MultipleNets
+2310	This shared resource does not exist.	NERR_NetNameNotFound
+2311	This device is not shared.	NERR_DeviceNotShared
+2312	A session does not exist with that computer name.	NERR_ClientNameNotFound
+2314	There is not an open file with that identification number.	NERR_FileIdNotFound
+2315	A failure occurred when executing a remote administration command.	NERR_ExecFailure
+2316	A failure occurred when opening a remote temporary file.	NERR_TmpFile
+2317	The data returned from a remote administration command has been truncated to 64K.	NERR_TooMuchData
+2318	This device cannot be shared as both a spooled and a non-spooled resource.	NERR_DeviceShareConflict
+2319	The information in the list of servers may be incorrect.	NERR_BrowserTableIncomplete
+2320	The computer is not active in this domain.	NERR_NotLocalDomain
+2321	The share must be removed from the Distributed File System before it can be deleted.	NERR_IsDfsShare
+2331	The operation is invalid for this device.	NERR_DevInvalidOpCode
+2332	This device cannot be shared.	NERR_DevNotFound
+2333	This device was not open.	NERR_DevNotOpen
+2334	This device name list is invalid.	NERR_BadQueueDevString
+2335	The queue priority is invalid.	NERR_BadQueuePriority
+2337	There are no shared communication devices.	NERR_NoCommDevs
+2338	The queue you specified does not exist.	NERR_QueueNotFound
+2340	This list of devices is invalid.	NERR_BadDevString
+2341	The requested device is invalid.	NERR_BadDev
+2342	This device is already in use by the spooler.	NERR_InUseBySpooler
+2343	This device is already in use as a communication device.	NERR_CommDevInUse
+2351	This computer name is invalid.	NERR_InvalidComputer
+2354	The string and prefix specified are too long.	NERR_MaxLenExceeded
+2356	This path component is invalid.	NERR_BadComponent
+2357	Could not determine the type of input.	NERR_CantType
+2362	The buffer for types is not big enough.	NERR_TooManyEntries
+2370	Profile files cannot exceed 64K.	NERR_ProfileFileTooBig
+2371	The start offset is out of range.	NERR_ProfileOffset
+2372	The system cannot delete current connections to network resources.	NERR_ProfileCleanup
+2373	The system was unable to parse the command line in this file.	NERR_ProfileUnknownCmd
+2374	An error occurred while loading the profile file.	NERR_ProfileLoadErr
+2375	@W Errors occurred while saving the profile file. The profile was partially saved.	NERR_ProfileSaveErr
+2377	Log file %1 is full.	NERR_LogOverflow
+2378	This log file has changed between reads.	NERR_LogFileChanged
+2379	Log file %1 is corrupt.	NERR_LogFileCorrupt
+2380	The source path cannot be a directory.	NERR_SourceIsDir
+2381	The source path is illegal.	NERR_BadSource
+2382	The destination path is illegal.	NERR_BadDest
+2383	The source and destination paths are on different servers.	NERR_DifferentServers
+2385	The Run server you requested is paused.	NERR_RunSrvPaused
+2389	An error occurred when communicating with a Run server.	NERR_ErrCommRunSrv
+2391	An error occurred when starting a background process.	NERR_ErrorExecingGhost
+2392	The shared resource you are connected to could not be found.	NERR_ShareNotFound
+2400	The LAN adapter number is invalid.	NERR_InvalidLana
+2401	There are open files on the connection.	NERR_OpenFiles
+2402	Active connections still exist.	NERR_ActiveConns
+2403	This share name or password is invalid.	NERR_BadPasswordCore
+2404	The device is being accessed by an active process.	NERR_DevInUse
+2405	The drive letter is in use locally.	NERR_LocalDrive
+2430	The specified client is already registered for the specified event.	NERR_AlertExists
+2431	The alert table is full.	NERR_TooManyAlerts
+2432	An invalid or nonexistent alert name was raised.	NERR_NoSuchAlert
+2433	The alert recipient is invalid.	NERR_BadRecipient
+2434	A user's session with this server has been deleted	NERR_AcctLimitExceeded
+2440	The log file does not contain the requested record number.	NERR_InvalidLogSeek
+2450	The user accounts database is not configured correctly.	NERR_BadUasConfig
+2451	This operation is not permitted when the Netlogon service is running.	NERR_InvalidUASOp
+2452	This operation is not allowed on the last administrative account.	NERR_LastAdmin
+2453	Could not find domain controller for this domain.	NERR_DCNotFound
+2454	Could not set logon information for this user.	NERR_LogonTrackingError
+2455	The Netlogon service has not been started.	NERR_NetlogonNotStarted
+2456	Unable to add to the user accounts database.	NERR_CanNotGrowUASFile
+2457	This server's clock is not synchronized with the primary domain controller's clock.	NERR_TimeDiffAtDC
+2458	A password mismatch has been detected.	NERR_PasswordMismatch
+2460	The server identification does not specify a valid server.	NERR_NoSuchServer
+2461	The session identification does not specify a valid session.	NERR_NoSuchSession
+2462	The connection identification does not specify a valid connection.	NERR_NoSuchConnection
+2463	There is no space for another entry in the table of available servers.	NERR_TooManyServers
+2464	The server has reached the maximum number of sessions it supports.	NERR_TooManySessions
+2465	The server has reached the maximum number of connections it supports.	NERR_TooManyConnections
+2466	The server cannot open more files because it has reached its maximum number.	NERR_TooManyFiles
+2467	There are no alternate servers registered on this server.	NERR_NoAlternateServers
+2470	Try down-level (remote admin protocol) version of API instead.	NERR_TryDownLevel
+2480	The UPS driver could not be accessed by the UPS service.	NERR_UPSDriverNotStarted
+2481	The UPS service is not configured correctly.	NERR_UPSInvalidConfig
+2482	The UPS service could not access the specified Comm Port.	NERR_UPSInvalidCommPort
+2483	The UPS indicated a line fail or low battery situation. Service not started.	NERR_UPSSignalAsserted
+2484	The UPS service failed to perform a system shut down.	NERR_UPSShutdownFailed
+2500	The program below returned an MS-DOS error code:	NERR_BadDosRetCode
+2501	The program below needs more memory:	NERR_ProgNeedsExtraMem
+2502	The program below called an unsupported MS-DOS function:	NERR_BadDosFunction
+2503	The workstation failed to boot.	NERR_RemoteBootFailed
+2504	The file below is corrupt.	NERR_BadFileCheckSum
+2505	No loader is specified in the boot-block definition file.	NERR_NoRplBootSystem
+2506	NetBIOS returned an error: The NCB and SMB are dumped above.	NERR_RplLoadrNetBiosErr
+2507	A disk I/O error occurred.	NERR_RplLoadrDiskErr
+2508	Image parameter substitution failed.	NERR_ImageParamErr
+2509	Too many image parameters cross disk sector boundaries.	NERR_TooManyImageParams
+2510	The image was not generated from an MS-DOS diskette formatted with /S.	NERR_NonDosFloppyUsed
+2511	Remote boot will be restarted later.	NERR_RplBootRestart
+2512	The call to the Remoteboot server failed.	NERR_RplSrvrCallFailed
+2513	Cannot connect to the Remoteboot server.	NERR_CantConnectRplSrvr
+2514	Cannot open image file on the Remoteboot server.	NERR_CantOpenImageFile
+2515	Connecting to the Remoteboot server...	NERR_CallingRplSrvr
+2516	Connecting to the Remoteboot server...	NERR_StartingRplBoot
+2517	Remote boot service was stopped; check the error log for the cause of the problem.	NERR_RplBootServiceTerm
+2518	Remote boot startup failed; check the error log for the cause of the problem.	NERR_RplBootStartFailed
+2519	A second connection to a Remoteboot resource is not allowed.	NERR_RPL_CONNECTED
+2550	The browser service was configured with MaintainServerList=No.	NERR_BrowserConfiguredToNotRun
+2610	Service failed to start since none of the network adapters started with this service.	NERR_RplNoAdaptersStarted
+2611	Service failed to start due to bad startup information in the registry.	NERR_RplBadRegistry
+2612	Service failed to start because its database is absent or corrupt.	NERR_RplBadDatabase
+2613	Service failed to start because RPLFILES share is absent.	NERR_RplRplfilesShare
+2614	Service failed to start because RPLUSER group is absent.	NERR_RplNotRplServer
+2615	Cannot enumerate service records.	NERR_RplCannotEnum
+2616	Workstation record information has been corrupted.	NERR_RplWkstaInfoCorrupted
+2617	Workstation record was not found.	NERR_RplWkstaNotFound
+2618	Workstation name is in use by some other workstation.	NERR_RplWkstaNameUnavailable
+2619	Profile record information has been corrupted.	NERR_RplProfileInfoCorrupted
+2620	Profile record was not found.	NERR_RplProfileNotFound
+2621	Profile name is in use by some other profile.	NERR_RplProfileNameUnavailable
+2622	There are workstations using this profile.	NERR_RplProfileNotEmpty
+2623	Configuration record information has been corrupted.	NERR_RplConfigInfoCorrupted
+2624	Configuration record was not found.	NERR_RplConfigNotFound
+2625	Adapter ID record information has been corrupted.	NERR_RplAdapterInfoCorrupted
+2626	An internal service error has occurred.	NERR_RplInternal
+2627	Vendor ID record information has been corrupted.	NERR_RplVendorInfoCorrupted
+2628	Boot block record information has been corrupted.	NERR_RplBootInfoCorrupted
+2629	The user account for this workstation record is missing.	NERR_RplWkstaNeedsUserAcct
+2630	The RPLUSER local group could not be found.	NERR_RplNeedsRPLUSERAcct
+2631	Boot block record was not found.	NERR_RplBootNotFound
+2632	Chosen profile is incompatible with this workstation.	NERR_RplIncompatibleProfile
+2633	Chosen network adapter ID is in use by some other workstation.	NERR_RplAdapterNameUnavailable
+2634	There are profiles using this configuration.	NERR_RplConfigNotEmpty
+2635	There are workstations, profiles, or configurations using this boot block.	NERR_RplBootInUse
+2636	Service failed to backup Remoteboot database.	NERR_RplBackupDatabase
+2637	Adapter record was not found.	NERR_RplAdapterNotFound
+2638	Vendor record was not found.	NERR_RplVendorNotFound
+2639	Vendor name is in use by some other vendor record.	NERR_RplVendorNameUnavailable
+2640	(boot name, vendor ID) is in use by some other boot block record.	NERR_RplBootNameUnavailable
+2641	Configuration name is in use by some other configuration.	NERR_RplConfigNameUnavailable
+2660	The internal database maintained by the Dfs service is corrupt.	NERR_DfsInternalCorruption
+2661	One of the records in the internal Dfs database is corrupt.	NERR_DfsVolumeDataCorrupt
+2662	There is no DFS name whose entry path matches the input Entry Path.	NERR_DfsNoSuchVolume
+2663	A root or link with the given name already exists.	NERR_DfsVolumeAlreadyExists
+2664	The server share specified is already shared in the Dfs.	NERR_DfsAlreadyShared
+2665	The indicated server share does not support the indicated DFS namespace.	NERR_DfsNoSuchShare
+2666	The operation is not valid on this portion of the namespace.	NERR_DfsNotALeafVolume
+2667	The operation is not valid on this portion of the namespace.	NERR_DfsLeafVolume
+2668	The operation is ambiguous because the link has multiple servers.	NERR_DfsVolumeHasMultipleServers
+2669	Unable to create a link.	NERR_DfsCantCreateJunctionPoint
+2670	The server is not Dfs Aware.	NERR_DfsServerNotDfsAware
+2671	The specified rename target path is invalid.	NERR_DfsBadRenamePath
+2672	The specified DFS link is offline.	NERR_DfsVolumeIsOffline
+2673	The specified server is not a server for this link.	NERR_DfsNoSuchServer
+2674	A cycle in the Dfs name was detected.	NERR_DfsCyclicalName
+2675	The operation is not supported on a server-based Dfs.	NERR_DfsNotSupportedInServerDfs
+2676	This link is already supported by the specified server-share.	NERR_DfsDuplicateService
+2677	Can't remove the last server-share supporting this root or link.	NERR_DfsCantRemoveLastServerShare
+2678	The operation is not supported for an Inter-DFS link.	NERR_DfsVolumeIsInterDfs
+2679	The internal state of the Dfs Service has become inconsistent.	NERR_DfsInconsistent
+2680	The Dfs Service has been installed on the specified server.	NERR_DfsServerUpgraded
+2681	The Dfs data being reconciled is identical.	NERR_DfsDataIsIdentical
+2682	The DFS root cannot be deleted. Uninstall DFS if required.	NERR_DfsCantRemoveDfsRoot
+2683	A child or parent directory of the share is already in a Dfs.	NERR_DfsChildOrParentInDfs
+2690	Dfs internal error.	NERR_DfsInternalError
+2691	This computer is already joined to a domain.	NERR_SetupAlreadyJoined
+2692	This computer is not currently joined to a domain.	NERR_SetupNotJoined
+2693	This computer is a domain controller and cannot be unjoined from a domain.	NERR_SetupDomainController
+2694	The destination domain controller does not support creating machine accounts in OUs.	NERR_DefaultJoinRequired
+2695	The specified workgroup name is invalid.	NERR_InvalidWorkgroupName
+2696	The specified computer name is incompatible with the default language used on the domain controller.	NERR_NameUsesIncompatibleCodePage
+2697	The specified computer account could not be found.	NERR_ComputerAccountNotFound
+2698	This version of Windows cannot be joined to a domain.	NERR_PersonalSku
+2701	The password must change at the next logon.	NERR_PasswordMustChange
+2702	The account is locked out.	NERR_AccountLockedOut
+2703	The password is too long.	NERR_PasswordTooLong
+2704	The password does not meet the complexity policy.	NERR_PasswordNotComplexEnough
+2705	The password does not meet the requirements of the password filter DLLs.	NERR_PasswordFilterError
+2709	The offline join completion information was not found.	NERR_NoOfflineJoinInfo
+2710	The offline join completion information was bad.	NERR_BadOfflineJoinInfo
+2711	Unable to create offline join information. Please ensure you have access to the specified path location and permissions to modify its contents. Running as an elevated administrator may be required.	NERR_CantCreateJoinInfo
+2712	The domain join info being saved was incomplete or bad.	NERR_BadDomainJoinInfo
+2713	Offline join operation successfully completed but a restart is needed.	NERR_JoinPerformedMustRestart
+2714	There was no offline join operation pending.	NERR_NoJoinPending
+2715	Unable to set one or more requested machine or domain name values on the local computer.	NERR_ValuesNotSet
+2716	Could not verify the current machine's hostname against the saved value in the join completion information.	NERR_CantVerifyHostname
+2717	Unable to load the specified offline registry hive. Please ensure you have access to the specified path location and permissions to modify its contents. Running as an elevated administrator may be required.	NERR_CantLoadOfflineHive
+2718	The minimum session security requirements for this operation were not met.	NERR_ConnectionInsecure
+2719	Computer account provisioning blob version is not supported.	NERR_ProvisioningBlobUnsupported
