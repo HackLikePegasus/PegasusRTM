@@ -5,11 +5,11 @@ Incorrect username. Please try again.
 
 Connection not found.
 
-Resourse busy.
+Resource busy.
 
 Timed out.
 
 Invalid entry.
 
-Resourse unavailable. Try again.
+Resource unavailable. Try again.
 
